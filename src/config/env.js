@@ -11,7 +11,7 @@ let routerMode = '';
 let baseImgPath;
 
 if (process.env.NODE_ENV == 'development') {
-    baseUrl = '/apis';
+    baseUrl = '';
     baseImgPath = '';
 } else {
     baseUrl = '';

@@ -6,9 +6,9 @@
 import service from '../request'
 import qs from 'qs'
 
-export function mineHelpApi(data) {
+export function newsListApi(data) {
   return service({
-      url: '/Support/findAll',
+      url: '/newslist',
       method: 'post',
       data: qs.stringify(data)
   })

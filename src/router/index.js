@@ -12,7 +12,7 @@ Vue.use(Router)
 const IndexRoute = () => import (/* webpackChunkName: "indexRoute" */ '@/views/Index/indexRoute');
 // 首页
 const Index = () => import (/* webpackChunkName: "index" */ '@/views/Index');
-
+const NewsList = () => import (/* webpackChunkName: "newslist" */ '@/views/NewsList');
 // 第二页
 const MineRoute = () => import(/* webpackChunkName: "mineRoute" */ '@/views/AboutUS/mineRoute');
 const AboutUS = () => import (/* webpackChunkName: "mine" */ '@/views/AboutUS');
@@ -35,6 +35,11 @@ const router = new Router({
           component: Index
         },
       ]
+    },
+    {
+      path: '/newslist',
+      name: 'newsList',
+      component: NewsList,
     },
     {
       path: '/mine',

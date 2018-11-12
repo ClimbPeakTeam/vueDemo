@@ -6,22 +6,37 @@
       backType="goback"
       ></v-header>
 
-     <div class="seller-info-detial">
-     	{{info}}
+     <div class="seller-info-detial"  v-for="(item, key) in newsListShow" :key="key">
+       <news-cell
+      :newsDate="item"
+      :key="key"
+      ></news-cell>
      </div>
   </div>
 </template>
 
 <script>
 import VHeader from '@/components/header'
+import NewsCell from './component/newsCell'
+import { newsListApi } from '@/axios/modules/list'
 
 export default {
   name: 'newslist',
    data() {
     return {
-        info: '',
+        newsListShow: [],
     }
   },
+  components: {
+    VHeader,
+    NewsCell
+  },
+  mounted() {
+    newsListApi().then( res => {
+      console.log(res)
+      this.newsListShow = res.data.articles;
+    })
+  }
 }
 </script>
 

@@ -11,7 +11,7 @@ import * as filters from './filters' // global filters
 
 Vue.use(Mint);
 
-// require('@/mock/index')
+require('@/mock/index')
 
 require('@/styles/index.scss')
 
